@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LayoutProps } from "@/types/app/page-props";
 import DashboardWrapper from "./DashboardWrapper";
+import Providers from "./Providers";
 
 const interSans = Inter({
 	variable: "--font-inter-sans",
@@ -19,7 +20,9 @@ export default function RootLayout({ children }: LayoutProps) {
 	return (
 		<html lang="en">
 			<body className={`${interSans.variable} antialiased`}>
-				<DashboardWrapper>{children}</DashboardWrapper>
+				<Providers>
+					<DashboardWrapper>{children}</DashboardWrapper>
+				</Providers>
 			</body>
 		</html>
 	);
