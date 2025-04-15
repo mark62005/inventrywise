@@ -1,15 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { Bell, Menu, Settings, Sun } from "lucide-react";
+import { useAppDispatch, useAppSelector } from "@/state/redux";
+import {
+	selectIsDarkMode,
+	toggleDarkMode,
+	toggleSidebarCollapsed,
+} from "@/state/slices/globalSlice";
+import { Bell, Menu, Moon, Settings, Sun } from "lucide-react";
 
 function Navbar() {
+	const dispatch = useAppDispatch();
+	const isDarkMode = useAppSelector(selectIsDarkMode);
+
 	function toggleSidebar() {
-		// TODO: Finish the feature for toggling sidebar with redux
+		dispatch(toggleSidebarCollapsed());
 	}
 
-	function toggleDarkMode() {
-		// TODO: Finish the feature for toggling dark mode with redux
+	function toggleIsDarkMode() {
+		dispatch(toggleDarkMode());
 	}
 
 	return (
@@ -44,14 +53,20 @@ function Navbar() {
 				<div className="hidden md:flex justify-between items-center gap-3">
 					{/* DARK MODE BUTTON */}
 					<button
-						onClick={toggleDarkMode}
+						onClick={toggleIsDarkMode}
 						className="block cursor-pointer p-3"
 					>
-						{/* TODO: Conditional rendering for dark mode or light mode */}
-						<Sun
-							className="text-gray-500"
-							size={24}
-						/>
+						{isDarkMode ? (
+							<Sun
+								className="cursor-pointer text-gray-500"
+								size={24}
+							/>
+						) : (
+							<Moon
+								className="cursor-pointer text-gray-500"
+								size={24}
+							/>
+						)}
 					</button>
 
 					{/* NOTIFICATION BUTTON */}
