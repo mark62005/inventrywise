@@ -1,0 +1,41 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"scripts": {
+		"seed": "ts-node src/seed/seedPostgres.ts",
+		"build": "rimraf dist && npx tsc",
+		"start": "node dist/index.js",
+		"dev": "concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts --clear-cache\"",
+		"prisma:generate": "prisma generate",
+		"postprisma:generate": "shx cp -r src/generated/prisma-client/index.d.ts ../client/src/types/prismaTypes.d.ts"
+	},
+	"keywords": [],
+	"author": "Mark Wong",
+	"license": "ISC",
+	"packageManager": "pnpm@10.7.0",
+	"dependencies": {
+		"@prisma/client": "^6.6.0",
+		"body-parser": "^2.2.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.5.0",
+		"express": "^5.1.0",
+		"helmet": "^8.1.0",
+		"morgan": "^1.10.0",
+		"prisma": "^6.6.0"
+	},
+	"devDependencies": {
+		"@types/body-parser": "^1.19.5",
+		"@types/cors": "^2.8.17",
+		"@types/express": "^5.0.1",
+		"@types/morgan": "^1.9.9",
+		"@types/node": "^22.14.1",
+		"concurrently": "^9.1.2",
+		"nodemon": "^3.1.9",
+		"rimraf": "^6.0.1",
+		"shx": "^0.4.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.3"
+	}
+}
