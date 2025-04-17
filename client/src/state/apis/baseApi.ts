@@ -22,7 +22,7 @@ const customBaseQuery = async (
 				"An error occured";
 
 			// TODO: toast message
-			console.error(errorMessage);
+			console.log(errorMessage);
 		}
 
 		const isMutationRequest =

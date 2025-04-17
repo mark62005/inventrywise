@@ -1,9 +1,9 @@
 import { baseApi } from "./baseApi";
-import { DashboardMetrics } from "@/types/api/dashboardMetrics";
+import { IDashboardMetrics } from "@/types/api/dashboardMetrics";
 
 export const dashboardMetricsApi = baseApi.injectEndpoints({
 	endpoints: (builder) => ({
-		getDashboardMetrics: builder.query<DashboardMetrics, void>({
+		getDashboardMetrics: builder.query<IDashboardMetrics, void>({
 			query: () => "/dashboard",
 			providesTags: ["DashboardMetrics"],
 		}),
