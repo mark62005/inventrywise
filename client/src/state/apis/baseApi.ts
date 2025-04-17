@@ -22,7 +22,7 @@ const customBaseQuery = async (
 				"An error occured";
 
 			// TODO: toast message
-			console.error(errorMessage);
+			console.log(errorMessage);
 		}
 
 		const isMutationRequest =
@@ -56,7 +56,7 @@ const customBaseQuery = async (
 export const baseApi = createApi({
 	baseQuery: customBaseQuery,
 	reducerPath: "baseApi",
-	tagTypes: [],
+	tagTypes: ["DashboardMetrics"],
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	endpoints: (_builder) => ({}),
 });
