@@ -28,7 +28,7 @@ export interface IExpenseSummary {
 
 export interface IExpenseByCategorySummary {
 	expenseByCategorySummaryId: string;
-	catgory: string;
+	category: string;
 	amount: string;
 	date: string;
 }
@@ -38,5 +38,14 @@ export interface IDashboardMetrics {
 	salesSummary: ISalesSummary[];
 	purchaseSummary: IPurchaseSummary[];
 	expenseSummary: IExpenseSummary[];
-	expenseByCategorySummary: IExpenseByCategorySummary[];
+	expenseByCategory: IExpenseByCategorySummary[];
+}
+
+export type IExpenseSums = {
+	[category: string]: number;
+};
+
+export interface IExpenseCategory {
+	name: string;
+	value: number;
 }

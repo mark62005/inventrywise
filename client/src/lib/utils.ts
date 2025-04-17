@@ -1,4 +1,9 @@
-import { ISalesSummary } from "@/types/api/dashboardMetrics";
+import {
+	IExpenseByCategorySummary,
+	IExpenseCategory,
+	IExpenseSums,
+	ISalesSummary,
+} from "@/types/api/dashboardMetrics";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -37,4 +42,34 @@ export function getFormattedDateFor(highestValueSaleDate?: string): string {
 				year: "2-digit",
 			})
 		: "N/A";
+}
+
+/* EXPENSE SUMMARY */
+export function getExpenseSumsFor(
+	expenseByCategorySummary: IExpenseByCategorySummary[]
+): IExpenseSums {
+	return expenseByCategorySummary.reduce(
+		(acc: IExpenseSums, item: IExpenseByCategorySummary): IExpenseSums => {
+			const category = item.category + " Expenses";
+			const amount = parseInt(item.amount, 10);
+
+			if (!acc[category]) {
+				acc[category] = 0;
+			}
+
+			acc[category] += amount;
+
+			console.log("cat ", category);
+
+			return acc;
+		},
+		{}
+	);
+}
+
+export function getTotalExpensesFor(expenseCategories: IExpenseCategory[]) {
+	return expenseCategories.reduce(
+		(acc, category: { value: number }) => acc + category.value,
+		0
+	);
 }

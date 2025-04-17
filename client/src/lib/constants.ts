@@ -41,3 +41,6 @@ export const SIDEBAR_LINKS_CONFIG: ISidebarLink[] = [
 		Icon: CircleDollarSign,
 	},
 ] as const;
+
+/* EXPENSE SUMMARY */
+export const PIE_CHART_COLORS = ["#00C49F", "#0088FE", "#FFBB28"] as const;
