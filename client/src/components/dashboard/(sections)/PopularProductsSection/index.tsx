@@ -2,7 +2,7 @@
 
 import { useGetDashboardMetricsQuery } from "@/state/apis/dashboadMetricsApi";
 import { IProduct } from "@/types/api/dashboardMetrics";
-import PopularProductCard from "@/components/dashboard/popular-products/PopularProductCard";
+import PopularProductCard from "./PopularProductCard";
 
 function PopularProductsSection() {
 	const {
