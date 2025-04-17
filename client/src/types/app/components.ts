@@ -1,6 +1,11 @@
 import { LucideIcon } from "lucide-react";
 import { IProduct } from "@/types/api/products";
 
+/* GENERAL */
+export interface PageTitleProps {
+	name: string;
+}
+
 /* POPULAR PRODUCTS */
 export interface PopularProductCardProps {
 	product: IProduct;
