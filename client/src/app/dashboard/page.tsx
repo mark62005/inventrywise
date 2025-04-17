@@ -1,7 +1,8 @@
-import ExpenseSummarySection from "./(sections)/ExpenseSummarySection";
-import PopularProductsSection from "./(sections)/PopularProductsSection";
-import PurchaseSummarySection from "./(sections)/PurchaseSummarySection";
-import SalesSummarySection from "./(sections)/SalesSummarySection";
+import ExpenseSummarySection from "@/components/dashboard/(sections)/ExpenseSummarySection";
+import PopularProductsSection from "@/components/dashboard/(sections)/PopularProductsSection";
+import PurchaseSummarySection from "@/components/dashboard/(sections)/PurchaseSummarySection";
+import SalesSummarySection from "@/components/dashboard/(sections)/SalesSummarySection";
+import StatCardsSection from "@/components/dashboard/(sections)/StatCardsSection";
 
 function DashboardPage() {
 	return (
@@ -10,9 +11,7 @@ function DashboardPage() {
 			<SalesSummarySection />
 			<PurchaseSummarySection />
 			<ExpenseSummarySection />
-			<div className="md:row-span-1 xl:row-span-2 bg-gray-500" />
-			<div className="md:row-span-1 xl:row-span-2 bg-gray-500" />
-			<div className="md:row-span-1 xl:row-span-2 bg-gray-500" />
+			<StatCardsSection />
 		</div>
 	);
 }
