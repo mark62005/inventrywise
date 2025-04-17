@@ -1,4 +1,4 @@
-import { IProduct } from "@/types/api/products";
+import { IProduct, TNewProduct } from "@/types/api/products";
 import { baseApi } from "./baseApi";
 
 export const productsApi = baseApi.injectEndpoints({
@@ -10,7 +10,17 @@ export const productsApi = baseApi.injectEndpoints({
 			}),
 			providesTags: ["Products"],
 		}),
+
+		createNewProductWith: builder.mutation<IProduct, TNewProduct>({
+			query: (newProduct: TNewProduct) => ({
+				url: "/products",
+				method: "POST",
+				body: newProduct,
+			}),
+			invalidatesTags: ["Products"],
+		}),
 	}),
 });
 
-export const {} = productsApi;
+export const { useGetProductsWithQuery, useCreateNewProductWithMutation } =
+	productsApi;
