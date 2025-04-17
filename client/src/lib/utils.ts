@@ -58,9 +58,6 @@ export function getExpenseSumsFor(
 			}
 
 			acc[category] += amount;
-
-			console.log("cat ", category);
-
 			return acc;
 		},
 		{}

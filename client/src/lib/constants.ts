@@ -1,10 +1,14 @@
+import { StatCardProps } from "@/types/app/components";
 import { ISidebarLink } from "@/types/app/config";
 import {
 	Archive,
+	CheckCircle,
 	CircleDollarSign,
 	Clipboard,
 	Layout,
+	Package,
 	SlidersHorizontal,
+	Tag,
 	User,
 } from "lucide-react";
 
@@ -44,3 +48,60 @@ export const SIDEBAR_LINKS_CONFIG: ISidebarLink[] = [
 
 /* EXPENSE SUMMARY */
 export const PIE_CHART_COLORS = ["#00C49F", "#0088FE", "#FFBB28"] as const;
+
+/* STAT CARDS CONFIG */
+const STAT_CARD_DATE_RANGE = "22 - 29 October 2023" as const;
+
+export const STAT_CARDS_CONFIG: StatCardProps[] = [
+	{
+		title: "Customer & Expenses",
+		PrimaryIcon: Package,
+		dateRange: STAT_CARD_DATE_RANGE,
+		details: [
+			{
+				title: "Customer Growth",
+				amount: "175.00",
+				changePercentage: 131,
+			},
+			{
+				title: "Expenses",
+				amount: "10.00",
+				changePercentage: -56,
+			},
+		],
+	},
+	{
+		title: "Dues & Pending Orders",
+		PrimaryIcon: CheckCircle,
+		dateRange: STAT_CARD_DATE_RANGE,
+		details: [
+			{
+				title: "Dues",
+				amount: "250.00",
+				changePercentage: 131,
+			},
+			{
+				title: "Pending Orders",
+				amount: "147",
+				changePercentage: -56,
+			},
+		],
+	},
+	{
+		title: "Sales & Discount",
+		PrimaryIcon: Tag,
+		dateRange: STAT_CARD_DATE_RANGE,
+		details: [
+			{
+				title: "Sales",
+				amount: "1000.00",
+				changePercentage: 20,
+			},
+			{
+				title: "Discount",
+				amount: "200.00",
+				changePercentage: -10,
+			},
+		],
+	},
+];
