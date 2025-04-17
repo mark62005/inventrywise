@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 /* ROUTE IMPORTS */
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";
 
 dotenv.config();
 
@@ -21,7 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /* ROUTES */
 const baseUrl = "/api";
+
 app.use(`${baseUrl}/dashboard`, dashboardRoutes);
+app.use(`${baseUrl}/products`, productRoutes);
 
 /* SERVER */
 const port = process.env.PORT || "5001";
