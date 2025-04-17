@@ -1,7 +1,7 @@
 "use client";
 
 import { useGetDashboardMetricsQuery } from "@/state/apis/dashboadMetricsApi";
-import { IProduct } from "@/types/api/dashboardMetrics";
+import { IProduct } from "@/types/api/products";
 import PopularProductCard from "./PopularProductCard";
 
 function PopularProductsSection() {

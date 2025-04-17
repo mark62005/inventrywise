@@ -1,5 +1,5 @@
 import { LucideIcon } from "lucide-react";
-import { IProduct } from "../api/dashboardMetrics";
+import { IProduct } from "@/types/api/products";
 
 /* POPULAR PRODUCTS */
 export interface PopularProductCardProps {

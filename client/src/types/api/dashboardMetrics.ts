@@ -1,10 +1,4 @@
-export interface IProduct {
-	id: string;
-	name: string;
-	price: number;
-	rating?: number;
-	stockQuantity: number;
-}
+import { IProduct } from "./products";
 
 export interface ISalesSummary {
 	id: string;
