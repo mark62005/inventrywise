@@ -28,7 +28,7 @@ function PopularProductsSection() {
 					<div className="h-full overflow-auto">
 						{dashboardMetrics.popularProducts.map((product: IProduct) => (
 							<PopularProductCard
-								key={product.productId}
+								key={product.id}
 								product={product}
 							/>
 						))}

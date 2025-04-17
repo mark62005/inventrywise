@@ -1,5 +1,5 @@
 export interface IProduct {
-	productId: string;
+	id: string;
 	name: string;
 	price: number;
 	rating?: number;
@@ -7,27 +7,27 @@ export interface IProduct {
 }
 
 export interface ISalesSummary {
-	salesSummaryId: string;
+	id: string;
 	totalValue: number;
 	changePercentage?: number;
 	date: string;
 }
 
 export interface IPurchaseSummary {
-	purchaseSummaryId: string;
+	id: string;
 	totalPurchased: number;
 	changePercentage?: number;
 	date: string;
 }
 
 export interface IExpenseSummary {
-	expenseSummarId: string;
+	id: string;
 	totalExpenses: number;
 	date: string;
 }
 
 export interface IExpenseByCategorySummary {
-	expenseByCategorySummaryId: string;
+	id: string;
 	category: string;
 	amount: string;
 	date: string;
