@@ -1,6 +1,6 @@
 import { ShoppingBag } from "lucide-react";
 import { PopularProductCardProps } from "@/types/app/components";
-import Rating from "@/components/shared/Rating";
+import Rating from "@/components/dashboard/popular-products/Rating";
 
 function PopularProductCard({ product }: PopularProductCardProps) {
 	return (
