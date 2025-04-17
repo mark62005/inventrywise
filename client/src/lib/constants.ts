@@ -1,5 +1,6 @@
 import { StatCardProps } from "@/types/app/components";
 import { ISidebarLink } from "@/types/app/config";
+import { GridColDef } from "@mui/x-data-grid";
 import {
 	Archive,
 	CheckCircle,
@@ -105,3 +106,29 @@ export const STAT_CARDS_CONFIG: StatCardProps[] = [
 		],
 	},
 ];
+
+/* INVENTORY PAGE */
+export const INVENTORY_COL_CONFIG: GridColDef[] = [
+	{ field: "id", headerName: "ID", width: 90 },
+	{ field: "name", headerName: "Product Name", width: 200 },
+	{
+		field: "price",
+		headerName: "Price",
+		width: 110,
+		type: "number",
+		valueGetter: (_value, row) => `$${row.price}`,
+	},
+	{
+		field: "rating",
+		headerName: "Rating",
+		width: 110,
+		type: "number",
+		valueGetter: (_value, row) => (row.rating ? row.rating : "N/A"),
+	},
+	{
+		field: "stockQuantity",
+		headerName: "Stock Quantity",
+		width: 150,
+		type: "number",
+	},
+] as const;
