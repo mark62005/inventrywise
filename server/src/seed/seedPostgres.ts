@@ -43,7 +43,13 @@ async function main() {
 	for (const fileName of orderedFileNames) {
 		const filePath = path.join(dataDirectory, fileName);
 		const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-		const modelName = path.basename(fileName, path.extname(fileName));
+
+		let modelName = path.basename(fileName, path.extname(fileName));
+
+		if (modelName.charAt(modelName.length - 1) === "s") {
+			modelName = modelName.substring(0, modelName.length - 1);
+		}
+
 		const model: any = prisma[modelName as keyof typeof prisma];
 
 		if (!model) {
@@ -51,6 +57,7 @@ async function main() {
 			continue;
 		}
 
+		console.log(modelName);
 		for (const data of jsonData) {
 			await model.create({
 				data,
