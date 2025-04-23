@@ -1,5 +1,6 @@
 import { LucideIcon } from "lucide-react";
 import { IProduct } from "@/types/api/products";
+import { IProductFormData } from "./forms/product-forms";
 
 /* GENERAL */
 export interface PageTitleProps {
@@ -25,4 +26,12 @@ export interface StatCardProps {
 	PrimaryIcon: LucideIcon;
 	details: StatDetail[];
 	dateRange: string;
+}
+
+/* PRODUCT MODAL */
+export interface ProductModalProps {
+	initiatialData: IProductFormData;
+	isOpen: boolean;
+	isLoading: boolean;
+	onSubmit: (formData: IProductFormData) => void;
 }
