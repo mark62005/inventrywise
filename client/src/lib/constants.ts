@@ -132,3 +132,10 @@ export const INVENTORY_COL_CONFIG: GridColDef[] = [
 		type: "number",
 	},
 ] as const;
+
+/* USERS PAGE */
+export const USERS_COL_CONFIG: GridColDef[] = [
+	{ field: "id", headerName: "ID", width: 150 },
+	{ field: "name", headerName: "Name", flex: 2 },
+	{ field: "email", headerName: "Email", flex: 3 },
+] as const;
