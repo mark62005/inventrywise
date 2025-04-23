@@ -6,7 +6,10 @@ export const productsApi = baseApi.injectEndpoints({
 		getProductsWith: builder.query<IProduct[], { searchQuery?: string }>({
 			query: ({ searchQuery }) => ({
 				url: "/products",
-				params: searchQuery ? { search: searchQuery.trim() } : {},
+				params:
+					searchQuery && searchQuery.trim() !== ""
+						? { search: searchQuery.trim() }
+						: {},
 			}),
 			providesTags: ["Products"],
 		}),
