@@ -1,7 +1,7 @@
 "use client";
 
 import { useGetDashboardMetricsQuery } from "@/state/apis/dashboadMetricsApi";
-import { IProduct } from "@/types/api/dashboardMetrics";
+import { IProduct } from "@/types/api/products";
 import PopularProductCard from "./PopularProductCard";
 
 function PopularProductsSection() {
@@ -28,7 +28,7 @@ function PopularProductsSection() {
 					<div className="h-full overflow-auto">
 						{dashboardMetrics.popularProducts.map((product: IProduct) => (
 							<PopularProductCard
-								key={product.productId}
+								key={product.id}
 								product={product}
 							/>
 						))}
