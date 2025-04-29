@@ -1,9 +1,10 @@
 module.exports = {
-	app: [
+	apps: [
 		{
 			name: "inventrywise",
 			script: "pnpm",
-			args: "run dev",
+			args: "dev",
+			interpreter: "none",
 			env_development: {
 				NODE_ENV: "development",
 				PORT: "5001",
